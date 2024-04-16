@@ -45,8 +45,8 @@ configuration file is a TOML file that contains the following fields:
 - `host`: The host on which the server will listen. Default is `0.0.0.0`.
 - `port`: The port on which the server will listen. Default is `8080`.
 - `log`: The log filter directive as defined by the `tracing-subscriber` crate.
-  For more information on the filter directive, see the [documentation]
-  (https://docs.rs/tracing-subscriber/0.3.18/tracing_subscriber/filter/struct.EnvFilter.tml).
+  For more information on the filter directive, see the
+  [documentation](https://docs.rs/tracing-subscriber/0.3.18/tracing_subscriber/filter/struct.EnvFilter.tml).
   Default is `error`.
 - `site.title`: The title of the website. There is no default value for this
   field.
