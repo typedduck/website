@@ -1,0 +1,10 @@
+log = "debug"
+
+[site]
+language = "en"
+title = "My Website"
+base = "http://localhost:8080"
+
+[[assets]]
+route = "/assets"
+path = "assets"

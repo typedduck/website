@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: 'Inter', system-ui, sans-serif;
+    }
+}
+
+@layer components {
+}
+
+@layer utilities {
+    .hyphens {
+        word-wrap: break-word;
+        -webkit-hyphens: auto; /* iOS 4.2+ */
+        -moz-hyphens: auto; /* Firefox 5+ */
+        -ms-hyphens: auto; /* IE 10+ */
+        hyphens: auto;
+     }
+}

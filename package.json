@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build-release": "tailwindcss -i ./input.css -o ./assets/css/main.css --minify",
+    "build": "tailwindcss -i ./input.css -o ./assets/css/main.css",
+    "watch": "tailwindcss -i ./input.css -o ./assets/css/main.css --watch",
+    "update-assets": "cp -r node_modules/htmx.org/dist/htmx.min.js ./assets/js/htmx.min.js"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  },
+  "dependencies": {
+    "htmx.org": "^1.9.11"
+  }
+}
