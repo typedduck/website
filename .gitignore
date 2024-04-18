@@ -1,4 +1,5 @@
 /tests
 /target
+/.vscode
 /Cargo.toml
 /Cargo.lock

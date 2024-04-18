@@ -16,5 +16,7 @@ jobs:
       uses: actions/checkout@v4
     - name: Install Rust toolchain
       uses: dtolnay/rust-toolchain@stable
-    - name: Check
-      run: cargo check --tests --all-features
+    - name: Build
+      run: cargo build --release
+    - name: Test
+      run: cargo test
