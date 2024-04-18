@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PROJECT_NAME: website-example
+      PROJECT_NAME: website
 
     steps:
       - name: Checkout repository
