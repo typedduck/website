@@ -36,6 +36,20 @@ registered as the fallback route in the `main` function.
 As of now there is only one template defined in the folder `simple`. In the
 future I will add more templates and styles to the project as needed.
 
+## Requirements
+
+The project requires the following tools to be installed:
+
+- [Rust](https://www.rust-lang.org/) as the programming language.
+- [Cargo](https://doc.rust-lang.org/cargo/) as the package manager.
+- [Cargo-Generate](https://cargo-generate.github.io/cargo-generate/index.html)
+  as the project generator.
+
+The template additionally requires the following tools to be installed:
+
+- [Node.js](https://nodejs.org/) to compile the Tailwind CSS.
+- [Docker](https://www.docker.com/) if you want to run the server in a container.
+
 ## Usage
 
 This scaffolding can be used as a template for new projects. It can be

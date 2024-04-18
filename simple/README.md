@@ -1,5 +1,14 @@
 # Website
 
+## Requirements
+
+The project requires the following tools to be installed:
+
+- [Rust](https://www.rust-lang.org/) as the programming language.
+- [Cargo](https://doc.rust-lang.org/cargo/) as the package manager.
+- [Node.js](https://nodejs.org/) to compile the Tailwind CSS.
+- [Docker](https://www.docker.com/) if you want to run the server in a container.
+
 ## Configuration
 
 The server can be configured using a TOML configuration file. It defines the
