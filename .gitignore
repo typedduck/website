@@ -1,6 +1,4 @@
-/node_modules
+/tests
 /target
-/.vscode
-/.devcontainer
-Cargo.lock
-package-lock.json
+/Cargo.toml
+/Cargo.lock

@@ -1,4 +1,4 @@
-name: Rust
+name: Build Website Template
 
 on:
   push:
@@ -6,17 +6,29 @@ on:
   pull_request:
     branches: [ "master" ]
 
-env:
-  CARGO_TERM_COLOR: always
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
+    env:
+      PROJECT_NAME: website-example
+
     steps:
-    - uses: actions/checkout@v3
-    - name: Build
-      run: cargo build --release --verbose --all-features
-    - name: Run tests
-      run: cargo test --verbose --all-features
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run cargo generate
+        uses: cargo-generate/cargo-generate-action@v0.20.0
+        with:
+          name: ${{ env.PROJECT_NAME }}
+          template: simple
+          arguments: "--template-values-file .github/workflows/template-values.toml --verbose"
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+      - name: Cargo check
+        # we need to move the generated project to a temp folder, away from the template project
+        # otherwise `cargo` runs would fail
+        # see https://github.com/rust-lang/cargo/issues/9922
+        run: |
+          mv $PROJECT_NAME ${{ runner.temp }}/
+          cd ${{ runner.temp }}/$PROJECT_NAME
+          cargo check --tests

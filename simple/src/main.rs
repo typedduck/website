@@ -3,7 +3,7 @@ use axum::Router;
 use tokio::{net::TcpListener, signal};
 use tower_http::{services::ServeDir, trace::TraceLayer};
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
-use website::{handler::init_routes, settings::Settings, AppState};
+use {{project-name}}::{handler::init_routes, settings::Settings, AppState};
 
 #[tokio::main]
 async fn main() {

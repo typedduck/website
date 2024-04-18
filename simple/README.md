@@ -1,75 +1,9 @@
-# Website Scaffolding
+# Website
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/typedduck/website/rust.yml)
+## Configuration
 
-This is a simple biased website scaffolding that I use for my projects. It uses
-the following libraries and tools:
-
-- [Axum](https://crates.io/crates/axum) for the web framework.
-- [Askama](https://crates.io/crates/askama) for the template engine.
-- [Htmx](https://htmx.org/) for the client-side interactivity.
-- [Tailwind CSS](https://tailwindcss.com/) for the styling.
-
-In the assets folder there are predefined fonts which are used in the Tailwind
-CSS configuration. These are:
-
-- [Inter](https://fonts.google.com/specimen/Inter) as the sans-serif font.
-- [Merriweather](https://fonts.google.com/specimen/Merriweather) as the serif
-  font.
-
-The fonts and scripts are not loaded from a CDN but are included in the project
-itself. This reduces the number of external dependencies and allows for the
-website to be used offline.
-
-The template `root.html` is the base template for all the pages. It includes all
-the necessary CSS and JavaScript files and allows for the title and the
-content to be overridden.
-
-The `index.html` is the main page of the website and is the one that is shown
-when the website is accessed. It is handled by the `home` function in the
-`handler` module.
-
-The `404.html` is the page that is shown when a page is not found. The handler
-for this page is the `not_found` function in the `handler` module. It is
-registered as the fallback route in the `main` function.
-
-As of now there is only one template defined in the folder `simple`. In the
-future I will add more templates and styles to the project as needed.
-
-## Usage
-
-This scaffolding can be used as a template for new projects. It can be
-installed using the [`cargo generate`](https://cargo-generate.github.io/cargo-generate/index.html)
-command. To install the template, use the following command:
-
-```sh
-$ cargo generate --git https://github.com/typpeduck/website.git
-```
-
-This will create a new folder with the name of the project and will initialize
-it with the parameterized templates. The project can be built using the
-following commands:
-
-```sh
-$ cd project-name
-$ cargo build --release
-```
-
-The project can be run using the following command:
-
-```sh
-$ cargo run --release
-```
-
-The server will start and will listen on `http://localhost:8080`.
-
-You can start implementing your website by modifying the `src/handler.rs` and
-`src/templates` files to suit your needs. You can also modify the `src/main.rs`
-file to add more routes and handlers. You add or modify the `assets` folder to
-include your own fonts and scripts.
-
-The resulting server can be configured using a configuration file. The
-configuration file is a TOML file that contains the following fields:
+The server can be configured using a TOML configuration file. It defines the
+following fields:
 
 - `host`: The host on which the server will listen. Default is `0.0.0.0`.
 - `port`: The port on which the server will listen. Default is `8080`.
@@ -138,20 +72,20 @@ The server can be run in a Docker container. The Dockerfile is defined in the
 repository and can be built using the following command:
 
 ```sh
-$ docker build -t website .
+$ docker build -t {{project-name}} .
 ```
 
 The server can be run using the following command:
 
 ```sh
-$ docker run -p 8080:8080 -it --rm website
+$ docker run -p 8080:8080 -it --rm {{project-name}}
 ```
 
 The server can also be run using a configuration file. The configuration file
 can be mounted to the container using the following command:
 
 ```sh
-$ docker run -p 8080:8080 -v $(pwd)/config.toml:/config.toml -it --rm website --config /config.toml
+$ docker run -p 8080:8080 -v $(pwd)/config.toml:/config.toml -it --rm {{project-name}} --config /config.toml
 ```
 
 This will override the default configuration file with the one that is mounted
@@ -171,17 +105,3 @@ dependencies are used, the container provides minimal attack surface.
 This project is licensed under the MIT License or the Apache License 2.0, at
 your option. For details, see the `LICENSE-MIT` and `LICENSE-APACHE` files for
 more information.
-
-## Support
-
-If you like this project and want to support it, you can do so by:
-
-- Giving it a star on GitHub.
-- Sharing it with your friends.
-- Contributing to the project by opening an issue or a pull request.
-- Donating to the project by using the following links:
-  - Bitcoin (Taproot): `bc1pqdck3v3r7sa4mgl0dztfzufa4xg66g8cpcgwvjax9rtx6mlxafdqcgw3g2`
-  - Bitcoin (Segwit): `bc1qet2ypmsxtx6mc03329ft5a736fy906flm4c42a9d3e7mvu872tcs8myzs6`
-  - [Patreon](https://www.patreon.com/typedduck)
-
-Patreon supporters will be listed in the `SUPPORTERS.md` file.
